@@ -1,0 +1,96 @@
+{
+  "info": {
+    "name": "Consultancy Backend API",
+    "description": "Postman collection for Consultancy Backend (Students Module)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Students APIs",
+      "item": [
+        {
+          "name": "Create Student",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Amit Kumar\",\n  \"email\": \"amit@gmail.com\",\n  \"phone\": \"9876543210\",\n  \"gender\": \"male\",\n  \"description\": \"MERN stack student\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/students/post",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "post"]
+            }
+          }
+        },
+        {
+          "name": "Get All Students",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/get",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "get"]
+            }
+          }
+        },
+        {
+          "name": "Get Student By ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/get/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "get", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Student By ID",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/students/delete/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "students", "delete", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
