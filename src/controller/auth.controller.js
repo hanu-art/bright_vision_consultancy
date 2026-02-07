@@ -3,7 +3,7 @@ import { registerAdminService ,
   getProfileService
  } from "../services/auth.services.js"; 
 
-import { successResponse } from "../../utils/response.utils.js"; 
+import { successResponse } from "../utils/response.utils.js";
 
 export const registerAdmin = async (req, res, next) => {
   try {

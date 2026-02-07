@@ -3,8 +3,7 @@ import { createStudentService ,
     getStudentByIdService ,
     deleteStudentByIdService
 } from "../services/students.service.js";
-
-import { successResponse } from "../../utils/response.utils.js";
+import { successResponse } from "../utils/response.utils.js";
 export const createStudentController = async (req, res, next) => {
   try {
     const studentId = await createStudentService(req.body);

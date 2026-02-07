@@ -14,3 +14,11 @@ export const dbData = {
 }; 
 
 export const jwtSecret = process.env.JWT_SECRET;
+
+
+export const deepSeek ={
+  DEEPSEEK_API_URL: process.env.DEEPSEEK_API_URL,
+  DEEPSEEK_API_KEY: process.env.DEEPSEEK_API_KEY,
+  RATE_LIMIT_WINDOW: Number(process.env.RATE_LIMIT_WINDOW),
+  RATE_LIMIT_MAX: Number(process.env.RATE_LIMIT_MAX),
+}
