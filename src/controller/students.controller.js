@@ -37,7 +37,7 @@ export const getAllStudentsController = async (req, res, next) => {
 export const getStudentByIdController = async (req, res, next) => {
   try {
     const student = await getStudentByIdService(req.params.id);
-     console.log(student);
+ 
     return successResponse(
       res,
       "Student fetched successfully",

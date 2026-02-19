@@ -1,5 +1,6 @@
 
-import { ALLOWED_LOCATIONS } from '../src/config/constants.js';
+
+import { ALLOWED_LOCATIONS } from '../config/constants.js';
 export const validateQuestion = (question) => {
   if (!question || typeof question !== 'string') {
     return { isValid: false, reason: 'Invalid question format' };

@@ -1,7 +1,8 @@
-import express from 'cors';
+import express from 'express';
 
 import { chatController } from '../controller/chat.controller.js';
 import { validateChatRequest } from '../middelware/validation.middleware.js';
+
 const router = express.Router();
 
 // Main chat endpoint

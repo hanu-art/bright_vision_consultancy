@@ -22,3 +22,5 @@ export const deepSeek ={
   RATE_LIMIT_WINDOW: Number(process.env.RATE_LIMIT_WINDOW),
   RATE_LIMIT_MAX: Number(process.env.RATE_LIMIT_MAX),
 }
+
+export const allowedOrigins = process.env.ALLOWED_ORIGINS;

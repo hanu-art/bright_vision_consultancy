@@ -1,5 +1,6 @@
 
-import { validateQuestion } from '../../utils/validation.utils.js';
+
+import { validateQuestion } from '../utils/validation.utils.js';
 export const validateChatRequest = (req, res, next) => {
   const { question } = req.body;
 

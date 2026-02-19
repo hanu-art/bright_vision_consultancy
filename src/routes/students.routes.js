@@ -25,7 +25,7 @@ router.get(
   getAllStudentsController
 );
  
-console.log("students routes");
+
 
 router.get("/get/:id",authMiddleware, getStudentByIdController);
 router.delete("/delete/:id", authMiddleware, deleteStudentByIdController);

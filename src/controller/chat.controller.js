@@ -7,10 +7,14 @@ import { successResponse ,
 import { asyncHandler } from '../middelware/chatError.middleware.js';
 import { deepSeek } from '../config/env.config.js';
 
+
+
 const deepSeekService = new DeepSeekService(deepSeek.DEEPSEEK_API_KEY);
+
 
 export const chatController = {
   // Main chat endpoint
+ 
   chat: asyncHandler(async (req, res) => {
     const { question } = req.body;
 
