@@ -1,12 +1,36 @@
 import pool from "../config/db.config.js";
 
 export const createStudent = async (data) => {
-  const { name, email, phone, gender, description } = data;
+
+  const {
+    name,
+    email,
+    phone,
+    education,
+    category,
+    state,
+    city,
+    referral,
+    referredPerson,
+    description
+  } = data;
 
   const [result] = await pool.query(
-    `INSERT INTO students (name, email, phone, gender, description)
-     VALUES (?, ?, ?, ?, ?)`,
-    [name, email, phone, gender, description]
+    `INSERT INTO students 
+    (name, email, phone, education, category, state, city, referral, referred_person, description)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    [
+      name,
+      email,
+      phone,
+      education,
+      category,
+      state,
+      city,
+      referral,
+      referredPerson,
+      description
+    ]
   );
 
   return result.insertId;

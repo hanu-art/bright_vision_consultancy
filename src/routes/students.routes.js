@@ -12,6 +12,11 @@ import { createStudentController,
 const router = express.Router();
 
 // ✅ Create student (Admin form submit)
+
+router.get("/check", (req, res) => {
+  res.send("Student route working");
+});
+
 router.post(
   "/post",
   // authMiddleware,   // baad me enable kar sakte ho
@@ -30,4 +35,4 @@ router.get(
 router.get("/get/:id",authMiddleware, getStudentByIdController);
 router.delete("/delete/:id", authMiddleware, deleteStudentByIdController);
 
-export default router
+export default router;

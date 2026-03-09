@@ -8,15 +8,14 @@ import { allowedOrigins } from "./config/env.config.js";
 
 import cors from "cors"
 const app = express();
-
-
-const allowedOriginsCors = allowedOrigins.split(",")
+const allowedOriginsCors = allowedOrigins.split(",");
 
 app.use(
   cors({
     origin: function (origin, callback) {
-
-      // allow requests with no origin (like mobile apps or postman)
+      console.log(origin)
+      console.log(allowedOriginsCors)
+      console.log(allowedOriginsCors.includes(origin))
       if (!origin) return callback(null, true);
 
       if (allowedOriginsCors.includes(origin)) {
@@ -26,11 +25,14 @@ app.use(
       }
     },
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
-
 app.use(express.json());
+
+
 
 app.use("/api/auth", authRoutes);
 
